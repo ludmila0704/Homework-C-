@@ -8,12 +8,12 @@ int num = Convert.ToInt32(Console.ReadLine());
 
 int ThirthDigit (int number)
 { int a =0;
-    if (number<100) return -1;
+    if ((number>0&&number<100)||(number<0&&number>-99)) return -1;
     else
     {
         while (number>100)
         {
-           a = number%10;
+           a = Math.Abs(number%10);
         //return a;
         number=number/10;
         } return a;
