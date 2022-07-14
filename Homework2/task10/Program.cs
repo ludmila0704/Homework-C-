@@ -10,13 +10,14 @@ int num = Convert.ToInt32(Console.ReadLine());
 int SecondNumber(int number)
 {
     int firstDigit = number / 10;
-    int secondDigit = firstDigit % 10;
+    int secondDigit = Math.Abs(firstDigit % 10);
     return secondDigit;
 }
 
-if (num > 99 && num < 1000)
-{
+if ((num > 99 && num < 1000)||(num < (-99) && num >(-1000)))
+    {
     int result = SecondNumber(num);
     Console.WriteLine($"{num}  ->  {result}");
-}
+    }   
+
 else Console.WriteLine("Введенное число не трехзначное");
